@@ -15,6 +15,10 @@ def binary_search(array) -> int:
     return left
 
 
+
+When can we use binary search?
+  - If we can discover some kind of monotonicity, for example, if condition(k) is True then condition(k + 1) is True, then we can consider binary search.
+
 Correctly initialize the boundary variables left and right to specify search space.
   - Only one rule: set up the boundary to include all possible elements;
 
