@@ -1,0 +1,29 @@
+The following code is the most generalized binary search template:
+
+def binary_search(array) -> int:
+    def condition(value) -> bool:
+        pass
+
+    left, right = min(search_space), max(search_space) # could be [0, n], [1, n] etc.
+    
+    while left < right:
+        mid = left + (right - left) // 2
+        if condition(mid):
+            right = mid
+        else:
+            left = mid + 1
+    return left
+
+
+Correctly initialize the boundary variables left and right to specify search space.
+  - Only one rule: set up the boundary to include all possible elements;
+
+Decide return value.
+  -Is it return left or return left - 1? Remember this: after exiting the while loop, left is the minimal k​ satisfying the condition function;
+
+To keep the logic simple, always use while(lo < hi)
+  - Why? Because this way, the only condition the loop exits is lo == hi. I know they will be pointing to the same element, and I know that element always exists.
+
+When your binary search is stuck, think of the situation when there are only 2 elements left. Did the boundary shrink correctly?
+  - Imagine when there are only 2 elements left in the boundary. If the logic fell into the else statement, since we are using the left/lower mid, it's simply not doing anything. It just keeps shrinking itself to itself, and the program got stuck.  We have to keep in mind that, the choice of mid and our shrinking logic has to work together in a way that every time, at least 1 element is excluded.
+  
