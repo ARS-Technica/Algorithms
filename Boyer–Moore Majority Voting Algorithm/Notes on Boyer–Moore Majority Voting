@@ -12,7 +12,17 @@
  return m
  
  
+! Boyer–Moore majority vote algorithm produces correct results only when the majority element is present in the input.
+
  
- 
+Loop through each element of the array, and maintain two integers candidate i.e., the potential candidate to be the majority element and count.
+
+At a given index i:
+  - If arr[i] is equal to the candidate, then, increment count by 1.
+  - If arr[i] is not equal to the candidate, then, decrement count by 1.
+  - If the count becomes zero, then, the value at that index will be the new value of candidate and count will be set to 1.
+  
+At the end, the value stored in candidate will be the majority element of the array, if exists.
+As a final check, iterate through the array and check if the frequency of the candidate in the array is greater than n/2 or not. If yes, then that is the majority element. Otherwise, we can say that the array doesn’t have a majority element.
  
  
