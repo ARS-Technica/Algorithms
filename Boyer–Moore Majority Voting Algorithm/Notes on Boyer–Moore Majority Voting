@@ -1,16 +1,21 @@
 # Pseudocode:
 
- Initialize an element m and a counter i = 0
- 
- for each element x of the input sequence:
-   if i = 0, then
-     assign m = x and i = 1
-   else
-     if m = x, then assign i = i + 1
-   else
-     assign i = i – 1
- return m
- 
+#Initialize an element majority and a counter i = 0
+# votes = list of integer votes
+
+majority = None
+majority_count = 0
+
+for vote in votes:
+    if majority_count == 0:
+        majority = vote
+    if vote == majority:
+        majority_count += 1
+    else:
+        majority_count -= 1
+
+return majority
+
  
 ! Boyer–Moore majority vote algorithm produces correct results only when the majority element is present in the input.
 
