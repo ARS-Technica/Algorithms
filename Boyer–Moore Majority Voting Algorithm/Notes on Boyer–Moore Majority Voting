@@ -1,0 +1,18 @@
+# Pseudocode:
+
+ Initialize an element m and a counter i = 0
+ 
+ for each element x of the input sequence:
+   if i = 0, then
+     assign m = x and i = 1
+   else
+     if m = x, then assign i = i + 1
+   else
+     assign i = i – 1
+ return m
+ 
+ 
+ 
+ 
+ 
+ 
