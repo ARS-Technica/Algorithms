@@ -1,0 +1,29 @@
+"""
+1. Brute-Force Solution with Loops
+
+A naive solution is to count each element’s frequency in the first half of the array to check if it is the majority element.
+"""
+
+# Runtime: O(n2) | Space: O(1)
+
+
+def majority_ele(nums):
+    size = len(nums)
+    max_count = 0
+    
+    for i in range(size):
+        count = 0
+        for j in range(size):
+            if nums[i] == nums[j]:
+                count = count + 1
+        if count > max_count:
+            max_count = count
+            element = i
+            
+    if max_count > size // 2:
+        return nums[element]
+
+"""
+Since the list had to be travelled repeatedly for every element, hence a nested for loop was required in this method. Thus, this leads to quadratic runtime complexity of O(n2).  We can improve worst-case time complexity to O(n.log(n)) by sorting the array and then perform a binary search for each element’s first and last occurrence. If the difference between first and last occurrence is more than n/2, the The majority element is found.
+"""
+
