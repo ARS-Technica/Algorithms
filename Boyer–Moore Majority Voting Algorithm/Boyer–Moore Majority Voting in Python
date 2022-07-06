@@ -80,6 +80,7 @@ If the counter is non-zero, increment or decrement it according to whether x is 
 At the end of this process, if the sequence has a majority, it will be the element stored by the algorithm. If there is no majority element, the algorithm will not detect that fact and may output the wrong element. In other words, the Boyer–Moore majority vote algorithm produces correct results only when the majority element is present in the input.
 """
 
+# Runtime: O(N) | Space: O(1)
 
 # Function to find the majority element present in a given list
 def findMajorityElement(nums):
