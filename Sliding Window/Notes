@@ -17,6 +17,28 @@ Compute the result for 1st window, i.e. from start of data structure
 Then use a loop to slide the window by 1, and keep computing the result window by window.
 """
 
+"""
+# https://medium.com/@timpark0807/leetcode-is-easy-sliding-window-c44c11cc33e1
+
+General Rules
+Sliding Window is all about defining a condition to stop expanding, expanding our window until we meet that condition, processing the current window, contracting our window until we can start expanding again until our window has considered the entire string or array.
+
+We will always need these 3 variables:
+
+Window Bounds — I use left and right. Some prefer low and high, or i and j. Whatever you choose, be consistent between problems.
+Track Condition — Here we used ‘count_of_zeroes’. Try to be as descriptive as possible so when you read your code the variable name makes sense. It helps logically.
+Return Value — Here we used ‘global_max’. Again, it doesn’t matter what you choose, but be consistent. I use ‘global_max’ and ‘global_min’ for all my sliding window problems.
+My thought process is always as follows:
+
+Define condition to stop expanding our window
+
+Expand our window until we meet that condition but before expanding the window, process the element at the ‘right’ index.
+If we meet our condition to stop expanding, process the current window.
+Contract our current window, but before contracting, process the element at the ‘left’ index.
+
+Process Edge Cases.
+Once you understand that basic thought process, the only thing you’ll need to change is the condition at which we stop expanding and how we process the left and right elements.
+"""
 
 # Static Sliding Window
 
